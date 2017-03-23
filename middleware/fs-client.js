@@ -10,7 +10,7 @@ module.exports = function(req, res, next){
     var domain = req.protocol + '://' + req.hostname;
     req.fs = new FamilySearch({
       environment: config.get('FS.environment'),
-      appKey: config.get('FS.appKey'),
+      appKey: process.env.FS_APP_KEY,
       redirectUri: domain + '/oauth-redirect'
     });
     
